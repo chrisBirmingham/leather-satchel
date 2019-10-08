@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = 'IOC Container for Ruby'
   spec.description = 'A fairly simple IOC container based off of silexphp/Pimple'
-  spec.homepage = ''
+  spec.homepage = 'https://github.com/chrisBirmingham/leather-satchel'
 
   spec.files = Dir['lib/**/*'] + ['LICENSE']
   spec.license = 'Unlicense'

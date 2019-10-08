@@ -45,8 +45,8 @@ container['password'] = '*********'
 
 container['database'] = container.factory(proc { |c|
   Database.new(
-    c['host']
-    c['username']
+    c['host'],
+    c['username'],
     c['password']
   )
 })
@@ -61,8 +61,8 @@ Factory services are services that return a new instance of the object on each c
 ```ruby
 container['database'] = container.factory(proc { |c|
   Database.new(
-    c['host']
-    c['username']
+    c['host'],
+    c['username'],
     c['password']
   )
 })
