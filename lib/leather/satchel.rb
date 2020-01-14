@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
-require 'leather/satchel/version'
-require 'leather/satchel/error/unknown_identifier_error'
-require 'leather/satchel/error/invalid_factory_error'
-
 module Leather
   module Satchel
+    autoload :VERSION, 'leather/satchel/version'
+    autoload :Error, 'leather/satchel/error'
+
     # IOC Container Class
     class Container
       # Container constructor
