@@ -3,10 +3,10 @@
 module Leather
   module Satchel
     module Error
-      # Error to be raised if an identifier is unknown
+      # Error raised if the requested identifier is not known by the container
       class UnknownIdentifierError < StandardError
         # UnknownIdentifierError constructor
-        # @param identifier [String]
+        # @param identifier [String|Symbol]
         def initialize(identifier)
           message = "Unknown service identifier #{identifier}"
           super(message)

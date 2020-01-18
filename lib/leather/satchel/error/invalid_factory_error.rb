@@ -3,6 +3,7 @@
 module Leather
   module Satchel
     module Error
+      # Error raised if the provided factory is not the correct type
       class InvalidFactoryError < StandardError
         # InvalidFactoryError constructor
         # @param type [String]

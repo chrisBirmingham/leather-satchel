@@ -21,17 +21,18 @@ module Leather
       end
 
       # Inserts a service into the container under the name @key
-      # @param key [String|Symbol] The name of the service
-      # @param value [Any] The value of the container
+      # @param key [String|Symbol] The name of the value, service or factory
+      # @param value [Object] The object to store against @key
       def []=(key, value)
         @keys[key] = true
         @values[key] = value
       end
 
-      # Gets a service from the container
+      # Gets a value, service or factory from the container
       # @param key [String|Symbol] The name of the service to look for
-      # @return [Any] The stored service value
-      # @throw Error::UnknownIdentifierError
+      # @return [Object] The stored service value
+      # @raise [Error::UnknownIdentifierError] If the container doesn't contain
+      #   the requested key
       def [](key)
         raise Error::UnknownIdentifierError, key unless @keys.key?(key)
 
@@ -52,6 +53,7 @@ module Leather
       # Defines a factory service
       # @param service [Proc]
       # @return [Proc]
+      # @raise [Error::InvalidFactoryError] If the provided factory is not a Proc
       def factory(service)
         raise Error::InvalidFactoryError, service.class unless service.is_a?(Proc)
 
@@ -59,7 +61,7 @@ module Leather
         service
       end
 
-      # Deletes a stored service from the container if it exists
+      # Deletes a stored value, service or factory from the container if it exists
       # @param key [String|Symbol]
       def remove(key)
         return unless @keys.key?(key)
