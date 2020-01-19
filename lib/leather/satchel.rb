@@ -20,6 +20,13 @@ module Leather
         end
       end
 
+      # Checks if a given @key exists in the container
+      # @param key [String|Symbol] The name we are checking
+      # @return [Boolean]
+      def contain?(key)
+        @keys.key?(key)
+      end
+
       # Inserts a service into the container under the name @key
       # @param key [String|Symbol] The name of the value, service or factory
       # @param value [Object] The object to store against @key
