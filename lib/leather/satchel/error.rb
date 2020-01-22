@@ -5,6 +5,7 @@ module Leather
     module Error
       autoload :UnknownIdentifierError, 'leather/satchel/error/unknown_identifier_error'
       autoload :InvalidFactoryError, 'leather/satchel/error/invalid_factory_error'
+      autoload :UnknownParameterError, 'leather/satchel/error/unknown_parameter_error'
     end
   end
 end

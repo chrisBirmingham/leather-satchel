@@ -1,0 +1,5 @@
+require 'leather/satchel'
+
+satchel = Leather::Satchel::LeatherSatchel.new
+container = satchel.process
+p container
