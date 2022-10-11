@@ -43,13 +43,13 @@ container['host'] = 'localhost'
 container['username'] = 'test_user'
 container['password'] = '*********'
 
-container['database'] = container.factory(proc { |c|
+container['database'] = proc { |c|
   Database.new(
     c['host'],
     c['username'],
     c['password']
   )
-})
+}
 
 database = container['database']
 ```
